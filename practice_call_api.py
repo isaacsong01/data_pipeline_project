@@ -40,4 +40,7 @@ if 'organic_results' in results:
             
     print(json.dumps(restaurants, indent=2))
 
-# print(json.dumps(results,indent=2))
+
+# for restaurant in restaurants:
+
+print(json.dumps(results,indent=2))
