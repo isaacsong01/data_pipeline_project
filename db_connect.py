@@ -4,11 +4,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-print("=== DEBUGGING INFO ===")
-print(f"DB_HOST: '{os.getenv('DB_HOST')}'")
-print(f"DB_PASSWORD exists: {os.getenv('DB_PASSWORD') is not None}")
-print(f"DB_PASSWORD length: {len(os.getenv('DB_PASSWORD') or '')}")
-print("========================")
 
 try:
     conn = psycopg.connect(
