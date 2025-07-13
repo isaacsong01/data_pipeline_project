@@ -5,15 +5,16 @@ import psycopg
 from serpapi import GoogleSearch
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(override=True)
 
 
 def create_logger():
     log_dir = 'logs'
+    file_name = 'call_api_log.log'
     os.makedirs(log_dir, exist_ok=True)
 
     logging.basicConfig(
-        filename=os.path.join(log_dir, 'call_api_log.log'),
+        filename=os.path.join(log_dir, file_name),
         level=logging.DEBUG,
         format='%(asctime)s - %(levelname)s - %(message)s',
         datefmt='%Y-%m-%d %H:%M:%S'
@@ -112,7 +113,7 @@ def connect_to_db():
     try:
         conn = psycopg.connect(
             host = os.getenv('DB_HOST'),
-            dbname = "mydb",
+            dbname = "jobs_db",
             user = "postgres",
             password = os.getenv('DB_PASSWORD'),
             port = 5432,

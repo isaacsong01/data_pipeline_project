@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+- name: raw
+  schema: raw
+  description: "Raw data loaded from API scripts"
+  tables:
+  - name: 'jobs'
+    description: "Data Engineering Jobs loaded from API"
