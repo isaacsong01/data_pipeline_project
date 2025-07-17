@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: stage_jobs
+    description: "Deduplicated and cleaned jobs from Raw source"
+    columns:
+      - name: job_id
+        description: "job id column"
+        tests:
+          - unique
+          - not_null

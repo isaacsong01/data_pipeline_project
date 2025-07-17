@@ -64,10 +64,10 @@ def connect_to_db():
     try:
         conn = psycopg.connect(
             host=os.getenv('DB_HOST'),
-            dbname=os.getenv('DB_NAME', 'jobs_db'),
-            user=os.getenv('DB_USER', 'postgres'),
+            dbname='jobs_db',
+            user='postgres',
             password=os.getenv('DB_PASSWORD'),
-            port=int(os.getenv('DB_PORT', 5432)),
+            port=5432,
             sslmode="require",
             connect_timeout=10
         )
@@ -158,7 +158,7 @@ def main():
         rows = cur.fetchall()
         for row in rows:
             print(row)
-            
+
     conn.close()
 
 
